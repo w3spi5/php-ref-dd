@@ -1,35 +1,33 @@
-## This is a fork of digitalnature/php-ref with updates from Juan Manuel Cabello to include PHP8 adaptations, modified to fit the OhCrud framework better.
+Fork
+--------------
+This is a fork of digitalnature/php-ref with updates from [Juan Manuel Cabello](https://github.com/fellowgeek/php-ref) to include PHP8 adaptations, modified to use `dd()` like in Laravel Framework.
 
-REF, or `r()` is a nicer alternative to PHP's [`print_r`](http://php.net/manual/en/function.print-r.php) / [`var_dump`](http://php.net/manual/en/function.var-dump.php) functions.
+> REF, or `dd()` is a nicer alternative to PHP's [`print_r`](http://php.net/manual/en/function.print-r.php) / [`var_dump`](http://php.net/manual/en/function.var-dump.php) / or `r()` itself functions
 
-## [DEMO](http://dev.digitalnature.eu/php-ref/) ##
+Demo
+-------
 
-## Requirements ##
+[DEMO from `digitalnature/php-ref`](http://dev.digitalnature.eu/php-ref/)
 
-- (server) PHP 5.3+ (5.4+  displays additional info)
-- (client) Any browser, except IE 8 and lower of course
+Installation
+------------
 
-## Installation using Composer
+Start by [installing composer](https://getcomposer.org/doc/01-basic-usage.md#installation).
+Next do:
 
-Add REF to your `composer.json`:
+    $ composer require w3spi5/php-ref-dd
 
-```js
-{
-    "require": {
-        "fellowgeek/php-ref": "dev-master"
-    }
-}
-```
+Requirements
+------------
+
+PHP 8.x+
 
 Now tell composer to download the bundle by running:
 
-``` bash
-$ php composer.phar update fellowgeek/php-ref
-```
+Composer will install the bundle to the directory `vendor/w3spi5`.
 
-Composer will install the bundle to the directory `vendor/fellowgeek`.
-
-## Usage ##
+Usage
+-------
 
 Basic example:
 
@@ -37,24 +35,24 @@ Basic example:
     require '/full/path/to/ref.php';
 
     // display info about defined classes
-    r(get_declared_classes());
+    dd(get_declared_classes());
 
     // display info about global variables
-    r($GLOBALS);
+    dd($GLOBALS);
 
-To print in text mode you can use the `rt()` function instead:
+To print in text mode you can use the `ddt()` function instead:
 
-    rt($var);
+    ddt($var);
 
 To terminate the script after the info is dumped, prepend the bitwise NOT operator:
 
-    ~r($var);   // html
-    ~rt($var);  // text
+    ~dd($var);   // html
+    ~ddt($var);  // text
 
 Prepending the error control operator (@) will return the information:
 
-    $output = @r($var);   // html
-    $output = @rt($var);  // text
+    $output = @dd($var);   // html
+    $output = @ddt($var);  // text
 
 Keyboard shortcuts (javascript must be enabled):
 
@@ -82,6 +80,7 @@ Currently available options and their default values:
 | `'scriptPath'`            | `'{:dir}/ref.js'`   | Local path to a custom javascript (HTML only); `FALSE` means no javascript (tooltips / toggle / kbd shortcuts require JS)
 | `'showUrls'`              | `TRUE`              | Gets information about URLs. Setting to false can improve performance (requires showStringMatches to be TRUE)
 
-## License
+License
+-------
 
-http://opensource.org/licenses/mit-license.html
+This library is released under the MIT license. See the complete license in the LICENSE file.

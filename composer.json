@@ -1,11 +1,11 @@
 {
-    "name": "fellowgeek/php-ref",
-    "description": "A nicer print_r/var_dump alternative for PHP 8.0+",
-    "keywords": ["debug","var_dump"],
-    "homepage": "https://github.com/fellowgeek/php-ref",
+    "name": "w3spi5/php-ref-dd",
+    "description": "A nicer print_r/var_dump alternative for PHP 8.0+ using dd() like in Laravel",
+    "keywords": ["debug","var_dump","dd"],
+    "homepage": "https://github.com/w3spi5/php-ref-dd",
     "license": "MIT",
     "require": {
-        "php": ">=8.0.0"
+        "php": ">=8.0"
     },
     "autoload": {
         "files": [ "ref.php" ]
